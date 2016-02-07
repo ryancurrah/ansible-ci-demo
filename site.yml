@@ -1,0 +1,7 @@
+---
+- name: apply webserver configuration to webserver nodes
+  hosts: webservers
+  remote_user: root
+
+  roles:
+    - geerlingguy.apache
