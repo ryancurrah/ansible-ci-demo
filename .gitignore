@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Emacs template
 # -*- mode: gitignore; -*-
 *~
@@ -47,6 +48,8 @@ tramp
 # sftp configuration file
 sftp-config.json
 ### Python template
+=======
+>>>>>>> 10f397e14afbf9f7b89233cdd5485362d3974708
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -92,6 +95,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *,cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -108,8 +112,6 @@ target/
 ### Vagrant template
 .vagrant/
 ### Linux template
-*~
-
 # KDE directory preferences
 .directory
 
@@ -187,7 +189,6 @@ $RECYCLE.BIN/
 *.un~
 Session.vim
 .netrwhist
-*~
 ### VirtualEnv template
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -200,3 +201,5 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # Created by .ignore support plugin (hsz.mobi)
+#Ipython Notebook
+.ipynb_checkpoints
