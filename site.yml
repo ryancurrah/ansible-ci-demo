@@ -1,7 +1,8 @@
 ---
-- name: apply webserver configuration to webserver nodes
-  hosts: webservers
+- name: apply webserver configuration to realcost webserver nodes
+  hosts: realcost
   remote_user: root
 
   roles:
     - geerlingguy.apache
+    - realcost
