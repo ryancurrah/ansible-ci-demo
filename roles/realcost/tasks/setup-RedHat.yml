@@ -1,0 +1,6 @@
+---
+- name: Ensure Git and Virtualenv is installed on RHEL.
+  yum: name="{{ item }}" state=installed
+  with_items:
+    - git
+    - python-virtualenv

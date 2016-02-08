@@ -1,0 +1,5 @@
+---
+# vars file for realcost RedHat
+
+apache_user: www-data
+apache_group: www-data

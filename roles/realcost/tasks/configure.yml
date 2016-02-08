@@ -1,0 +1,23 @@
+---
+- name: Ensure virtualenv directory exists
+  file: path={{ virtualenv_dir }} state=directory mode=0750 owner={{ apache_user }}
+
+- name: Ensure virtualenv exists
+  command: creates={{ virtualenv_dir }}/realcost/bin/python virtualenv {{ virtualenv_dir }}/realcost
+  become: yes
+  become_user: '{{ apache_user }}'
+
+- name: Ensure www directory exists
+  file: path={{ www_dir }} state=directory mode=0750 owner={{ apache_user }}
+
+- name: Install realcost application
+  git: repo=https://github.com/ryancurrah/realcost.git dest={{ www_dir }}/realcost
+  become: yes
+  become_user: '{{ apache_user }}'
+  notify: restart apache
+
+- name: Ensure pip requirements installed
+  pip: requirements={{ www_dir }}/realcost/requirements.txt virtualenv={{ virtualenv_dir }}/realcost
+  become: yes
+  become_user: '{{ apache_user }}'
+  notify: restart apache

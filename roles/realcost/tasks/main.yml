@@ -1,0 +1,12 @@
+---
+# tasks file for realcost
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  include_vars: '{{ ansible_os_family }}.yml'
+
+# Setup/install tasks.
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+# Configure and deploy realcost
+- include: configure.yml

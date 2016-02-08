@@ -1,0 +1,20 @@
+# Realcost vars
+
+# Apache vars
+apache_packages:
+  - httpd
+  - httpd-devel
+  - mod_ssl
+  - openssh
+  - mod_wsgi
+
+apache_remove_default_vhost: true
+
+apache_vhosts:
+  - servername: 'realcost.currah.ca'
+    documentroot: '/var/www/realcost'
+    extra_parameters: |
+      Alias /static /var/www/realcost/realcost/static
+        WSGIDaemonProcess realcost python-path=/var/www/realcost:/var/venvs/realcost/lib/python2.7/site-packages
+        WSGIProcessGroup realcost
+        WSGIScriptAlias / /var/www/realcost/realcost/wsgi.py
